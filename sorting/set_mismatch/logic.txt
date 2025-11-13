@@ -1,0 +1,26 @@
+We are provided an array of integers which contains elements from 1 to N. the array contains one duplicated number and one missing number due to duplication. we need to return the duplicated number and the missing number from array. for example, lets consider the following scenario:
+
+Input: nums = [1,2,2,4]
+Output: [2,3]
+ 
+ at index 2, 3 is expected and 2 is duplicated.
+
+ lets find solution:
+
+ in 0 iteration:
+ i=0; arr[i]=1; correctSpot = arr[i]-1 = 1-1 = 0;
+arr[correctSpot] = arr[i] ? true -> continue;
+
+in 1 iteration:
+i=1; arr[i]=2; correctSpot = 2-1=1;
+arr[correctSpot] = arr[i] ? true -> continue;
+
+in 2 iteration:
+i=2, arr[i] = 2; correctSpot=2-1=1;
+arr[correctSpot] = arr[i] ? true -> continue;
+
+in 3 iteration:
+i=3, arr[i] = 4; correctSpot=4-1=3;
+arr[correctSpot] = arr[i] ? true -> continue;
+
+loop through 1..N and check (arr[i] == i). if false, return [arr[i],i];
