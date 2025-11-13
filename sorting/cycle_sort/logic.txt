@@ -1,0 +1,30 @@
+SUPPOSE we are provided a list of numbers ranging from 1 to n.
+like for example [1,5,2,4,3];
+
+we need to bring it in following order: [1,2,3,4,5];
+
+we need to sort it in the following way:
+
+0th iteration:
+is 1 at its intended position like index = value-1?
+0 = 1-1 ? true; move on;
+
+1st iteration:
+index = value-1 ? false : swap varaiables; arr = [1,3,2,4,5]; 1-- // i++ again in for loop condition so i will come at same.;
+
+1st iteration:
+index = value -1 ? false : swap variables; arr = [1,2,3,4,5]; 1--; 
+
+1st iteration:
+index = value-1 ? true;
+
+2nd iteration:
+index = value-1 ? true;
+
+3rd iteration:
+index = value-1 ? true;
+
+4th iteration:
+index = value-1 ? true;
+
+total comparisons = 7, n=5; // in worst case it run many comparisons at i, but will only keep checking the rest of the i values and not nested comparisions will be made hopefully, O(n).

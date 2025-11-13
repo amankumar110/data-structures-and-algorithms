@@ -1,0 +1,77 @@
+🧩 Problem: “Find the Missing Student’s Roll Number”
+
+You are given an unsorted array of unique roll numbers of students who attended a class.
+The roll numbers range from 1 to N, but one student was absent, so one roll number is missing.
+
+Your task is to:
+
+Sort the roll numbers using Bubble Sort.
+
+Use Binary Search to find the missing roll number efficiently.
+
+📥 Input
+1. An integer N representing the total number of students.
+2. An array arr[] of length N-1, containing distinct integers in the range [1, N].
+
+
+1. The First Approach (Natural Number Sum - Sum of Array):
+- Apply bubble sorting to sort the list O(n*n).
+- Calculate sum of the array O(n).
+- result = natural sum of N - sum of array.
+
+
+2. Experimental another approach
+
+given:
+N=6
+sorted list: [1,2,4,5,6];
+missing = 3;
+
+start=0, end=4
+mid = 2
+midElement = 4;
+
+if(midElement == mid+1) {
+    start=mid+1;
+} else{
+    result = arr[mid]-1;
+    end=mid-1;
+}
+
+run this wile start<=end; return result, update result every time else block run.
+
+
+another example
+N=6, arr = [1,2,3,4,6];
+
+start=0;
+end=4;
+mid=2;
+
+midEl = 3;
+
+midEl == mid+1, run :: start=mid+1;
+
+start=3;
+end=4;
+mid=3;
+midEL= 4
+
+midEl== mid+1;, run :: start=mid+1;
+
+start=4;
+end=4;
+mid=4;
+midEl=6;
+
+midEl != mid+1; run :: end=mid-1 result = arr[mid]-1=5;
+
+loop breaks, answer = 5;
+
+2. The Second Approach (Binary Search on Value Set and Index Comparison) :
+1. Sort using bubble sorting.
+2. Apply Binary search and check for the following conditions:
+if(midEl == mid+1) : start=mid+1;
+else result = arr[mid]-1;, end=mid-1;
+3. run the loop while start<=end;
+4. return result.

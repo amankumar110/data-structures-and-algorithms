@@ -1,0 +1,21 @@
+SUPPOSE we have the following arrangment
+
+[7,9,1,2,3];
+
+How will bubble sort behave in this case?
+1. compare 1st element with 0th element : fakse no swapping.
+2. compare 2nd element with 1st element: true : the new array [7,1,9,2,3];
+3. compre 3rd element and 2nd element: ture: the new array [7,1,2,9,3];
+4. compare 4th element and 3rd element: true: the new array will be [7,1,2,3,9].
+It will continue until list is sorted.
+
+How will selection sort approach this?
+ - Selection sort will approach in a way that it will choose a element like 0th(7) element.
+ - It will find the maximum element of the range 0->(n-1) and put it at arr[n-1] and replace the previous index value ith the value at arr[n-1].
+ - again same it will do but with shrinked range of 0->(n-1-1);
+ - again same it will do but with shrinked range of 0->(n-1-2);
+
+ The abbreviation for this strategy is put it in the back or front depending on which way you choose.
+
+
+

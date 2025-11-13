@@ -1,0 +1,8 @@
+Given an unsorted array like the following:
+[24,67,0,-2,12,68,9];
+
+its sorted version looks like this:
+[-2,0,9,12,24,67,68];
+
+lets say that target is 24:
+then ans is 4: index of 24.

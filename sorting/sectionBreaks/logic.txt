@@ -1,0 +1,9 @@
+Problem Statement:
+Given a unsorted list of all roll numbers of two sections in a institute.
+sort the list and return the beginning roll number of section 2.
+
+My Approach (Averaging):
+1. Sort the list using bubble sort O(n^2).
+2. return arr[n/2]; // each section has equal students.
+
+so TC: O(n^2).

@@ -1,0 +1,52 @@
+SUPPOSE the following array:
+1 7 9 11 2 4 3 
+
+the sorted counterpart would be:
+1 2 3 4 7 9 11
+
+the bubble sort aims at exhcnage of elements with checks:
+
+it will attempt n-1 passes and position the n-1-ith element correctly, like in example
+
+0th pass:
+7<1 ? false
+9<7 ? false
+11<9 ? false
+2<9 ? true : the structure: 1 7 9 2 11 4 3
+4<11 ? true : the structure : 1 7 9 2 4 11 3
+3<11 ? true : the sturctre: 1 7 9 2 4 3 11
+
+final structure: 1 7 9 2 4 3 11
+
+1st pass:
+
+7<1 ? false
+9<7 ? false
+2<9 ? true : the structure : 1 7 2 9 4 3 11
+4<9 ? true : the structure : 1 7 2 4 9 3 11
+3<9 ? true : the structure : 1 7 2 4 3 9 11
+
+final structure: 1 7 2 4 3 9 11
+
+2nd pass:
+
+7<1 ? false
+2<7 ? true : the structure : 1 2 7 4 3 9 11
+4<7 ? true : the structure : 1 2 4 7 3 9 11
+3<7 ? true : the surcture : 1 2 4 3 7 9 11
+
+final structure : 1 2 4 3 7 9 11
+
+3rd pass:
+
+2<1 ? false
+4<2 ? false
+3<4 ? true : the structure: 1 2 3 4 7 9 11
+
+the structure: 1 2 3 4 7 9 11
+
+4th pass:
+
+2<1 ? false
+3<2 ? flase 
+... false list is sorted by this pass, so we can keep a variable called isSwaped, if true continue else list has been sorted and its time to break.
