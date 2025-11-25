@@ -1,0 +1,60 @@
+iven an array of distinct integers arr, find all pairs of elements with the minimum absolute difference of any two elements.
+
+Return a list of pairs in ascending order(with respect to pairs), each pair [a, b] follows
+
+a, b are from arr
+a < b
+b - a equals to the minimum absolute difference of any two elements in arr
+ 
+
+Example 1:
+
+Input: arr = [4,2,1,3]
+Output: [[1,2],[2,3],[3,4]]
+Explanation: The minimum absolute difference is 1. List all pairs with difference equal to 1 in ascending order.
+
+sorted array = [1,2,3,4];
+
+in a sorted setup, the minimum abs diff between two numbers can be 1 if consecutive and 0 if duplicates. 
+
+so in an array the abs diff of arr[0] & arr[2] cannot be smaller than arr[0] & arr[1].
+
+we must check the difference between all the pair of consecutive elements and if that diff is greater than thresholDiff, discard it. if the difference is equal to threshold, add it in the paris list. if it is smaller than threshold, threshold = diff and make a new list of pairs with that pair as intial pair.
+
+lets try:
+Input: arr = [1,3,6,10,15]
+
+threshold =Intger.Max_VALUE;
+int[][] diffs = {};
+
+in 0th iteration:
+threshold = Integer.MAX;
+diffs = [];
+diff = arr[i+1] - arr[i] // 3-1 = 2;
+diff > threshold ? false;
+diff < threshold ? true -> theshold = diff; diffs = [[1,3]];  
+
+in 1st iteration:
+threshold = 2;
+diffs = [[1,3]];
+diff = arr[i+1] - arr[i] // 6-3 = 3;
+diff > threshold ? true: continue;
+
+in 2nd iteration;
+threshold = 2;
+diffs = [[1,3]];
+diff = arr[i+1] - arr[i] // 10-6 = 4;
+diff > threshold ? true: continue;
+
+in 3rd iteration;
+threshold = 2;
+diffs = [[1,3]];
+diff = arr[i+1] - arr[i] // 15-10 = 5;
+diff > threshold ? true: continue;
+
+steps:
+1. loop through 0..arr.length-2 (inclusive);
+2. diff > threshold ?  continue;
+3. diff < threshold ? threshold=diff;recreate diffs list;
+4. diff == threshold ? add in diffs list;
+5. return list.

@@ -1,0 +1,18 @@
+Input: arr = [40,10,20,30]
+Output: [4,1,2,3]
+Explanation: 40 is the largest element. 10 is the smallest. 20 is the second smallest. 30 is the third smallest.
+
+
+for input arr, the sorted arr will be : [10,20,30,40];
+for rank of each number in input arr is its index in sorted arrangement +1;
+
+dry run:
+[40,10,20,30];
+sorted = [10,20,30,40] O(n^2).
+
+for(int i=0; i<arr.len;i++) { // O(n).
+    int rank = findIndexInSorted(arr[i])+1;
+    arr[i]=rank;
+}
+
+TC: O(n^2).

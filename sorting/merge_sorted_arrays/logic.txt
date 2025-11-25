@@ -1,0 +1,36 @@
+we are given the following things:
+arr1 = [1,2,3,4,0,0];
+m = length of arr1 actual elements without placeholders for arr2 = 4;
+arr2 = [5,6];
+n = length of ar2 = 2;
+
+the question want us to rewrite arr1 in such a way that in its total size of m+n, it accomodate both arrays in non decreasing order:
+[1,2,3,4,5,6]; size = 6;
+
+to do this, we can introduce another temp array called merged;
+we will store all the elements in this array and then set arr1=merged;
+
+logic:
+arr1 = [1,4,5,6,0,0];
+m = length of arr1 actual elements without placeholders for arr2 = 4;
+arr2 = [2,3];
+n = length of ar2 = 2;
+
+i=0,j=0; run while(i<m && j<n) {
+
+    if(arr1[i] < arr2[j])
+        add arr1[i];
+        i++;
+    else if(arr1[i] > arr2[j] && )
+        add arr2[j]
+        j++;
+    else
+        add arr[i];
+        i++;
+        j++;
+
+}
+
+loop from i till m and add remaiing elements;
+
+

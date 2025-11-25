@@ -1,0 +1,57 @@
+
+APPROACH 1:
+
+Lets Use the Following Test case: [-100,-2,-3,1]
+
+sorted = [-100,-3,-2,1];
+sorted with absolute = [1,-2,-3,-100];
+max Product = -100*-3*1 = 300;
+
+lets use ogProduct = arr[arr.length-1] * arr[arr.length-1];
+
+if (ogProduct > 0) : find the most previous positive element to the left
+else if(ogProduct < 0) find the most previous negative element to the left.
+
+here is a problem:
+[-8,-7,-2,10,20]
+
+the sorted order with absolute values will be : [-2,-7,-8,10,20];
+here product = 10*20 = 200 = +ve; find previous positive but all the previous;
+
+new strategy:
+sort with absolutre values;
+if product > 0 ? find previous positive element;
+    if there is no previousPositiveElement; return arr[n-1]*arr[n-3]*arr[n-4];
+    else if found return product * missingNumer;
+
+else if product < 0 ? find previous negative element;
+if there is no previous negative element; return arr[n-1]*arr[n-3]*arr[n-4];
+else if found return product * missingNumber;    
+
+
+--- this approach might be caught in indexOutOfBoundException.
+
+APPROACH 2:
+
+lets use testcase: 
+[-100,-2,-3,1]
+
+sortwd with absolute: [1,-2,-3,-100]
+intialProduct = -2 * -3 * -100;
+int product = -100 * -3;
+loop from 0..n-1 (inclusive).
+if(arr[i] * product > intialProduct) ? true -> intialProduct = product else continuie;
+
+---- this one did not work.
+
+APPROACH 3: 
+
+[-8,-7,-2,10,20]
+
+sorted normnally = [-8,-7,-2,10,20];
+product = 20;
+initProduct = 20*10*-2 = -200;
+
+loop through arr.length-2 (i)..0 
+    -> loop arr.length-2-i (j)..0 
+    if product*i*j > initProduct ? initialProduct = new product;
